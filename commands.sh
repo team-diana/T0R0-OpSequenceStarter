@@ -3,7 +3,7 @@
 
 ## !! Add in this script the new commands and update start.sh
 
-if [[ $1 -eq "" ]]; then
+if [ $1 -eq "" ]; then
     echo "Error: No argument/s."
 fi
 

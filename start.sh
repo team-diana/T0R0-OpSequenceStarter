@@ -3,7 +3,7 @@
 
 LOOP=1
 
-while [[ $LOOP -eq 1 ]] ; do
+while [ $LOOP -eq 1 ] ; do
     echo "Enter a number between 1 and 10. "
     echo "[0] -> ALL"
     echo "[1] -> GStreamer"
