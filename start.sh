@@ -29,4 +29,4 @@ while [ $LOOP -eq 1 ] ; do
     	*) echo "INVALID NUMBER!" ;;
     esac
 done
-echo "\nBye Bye!"
+echo "\nBye Bye!\n"

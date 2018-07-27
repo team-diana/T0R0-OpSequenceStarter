@@ -3,7 +3,7 @@
 
 ## !! Add in this script the new commands and update start.sh
 
-if [ $1 -eq "" ]; then
+if [ $1  = '' ]; then
     echo "Error: No argument/s."
 fi
 
@@ -11,7 +11,7 @@ for var in "$@"
     do
         echo "$var"
         case $var in
-            "all") command "sh commands.sh gstreamer" ;;    # HERE the commands that have to be launched with "all"
+            "all") sh commands.sh gstreamer ;;    # HERE the commands that have to be launched with "all"
 
             "gstreamer") # Start GStreamer streaming
             echo "GStreamer: starting streaming"
