@@ -4,11 +4,14 @@
 LOOP=1
 
 while [ $LOOP -eq 1 ] ; do
+    echo "\n--------------------------------\n"
     echo "Enter a number between 1 and 10. "
     echo "[0] -> ALL"
     echo "[1] -> GStreamer"
     echo "[q] -> QUIT"
+    echo -n " > "
     read NUM
+    echo "\n--------------------------------\n"
     case $NUM in
         0) sh commands.sh all ;;
     	1) sh commands.sh gstreamer ;;
