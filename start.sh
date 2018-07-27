@@ -10,8 +10,8 @@ while [ $LOOP -eq 1 ] ; do
     echo "[q] -> QUIT"
     read NUM
     case $NUM in
-        0) command "sh commands.sh all" ;;
-    	1) command "sh commands.sh gstreamer" ;;
+        0) sh commands.sh all ;;
+    	1) sh commands.sh gstreamer ;;
 
     	2) echo "two" ;;
     	3) echo "three" ;;
