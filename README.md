@@ -9,3 +9,6 @@ Clone this repo inside your home folder.
 ```bash
 ./start.sh
 ```
+
+## Compatibility
+- Ubuntu 16.04 LTS or older
