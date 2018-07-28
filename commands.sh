@@ -28,6 +28,7 @@ for var in "$@"
             months=( ["01"]="Jan" ["02"]="Feb" ["03"]="Mar" ["04"]="Apr" ["05"]="May" ["06"]="Jun" ["07"]="Jul" ["08"]="Agu" ["09"]="Sep" ["10"]="Oct" ["11"]="Nov" ["12"]="Dec")
             echo "${DAY} ${months[${MONTH}]} "${YEAR} ${HOUR}:${MIN}:30"
             #sudo date --set="${DAY} ${months[${MONTH}]} "${YEAR} ${HOUR}:${MIN}:30"
+            ;;
             
             *) echo "INVALID ARGUMENT!" ;;
         esac
