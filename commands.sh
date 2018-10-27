@@ -11,16 +11,30 @@ for var in "$@"
     do
         echo "$var"
         case $var in
-            "all") sh commands.sh gstreamer ;;    # HERE the commands that have to be launched with "all"
+            "all") sh commands.sh mobility arm ;;    # HERE the commands that have to be launched with "all"
+
+            "mobility") # Start Mobility and Arm driver developed for Altec
+            echo "Mobility: starting Mobility driver"
+            cd ../T0R0-MobilityCAN/ &&\
+            sh can_setup.sh &&\
+            cd TestMobility &&\
+            mkdir -p build &&\
+            cd build && cmake.. && make && ./test can0 ;;
+
+            "arm") # Start Mobility and Arm driver developed for Altec
+            echo "Arm: starting Arm driver"
+            cd ../T0R0-ArmDriver/Driver &&\
+            mkdir -p build &&\
+            cd build && cmake.. && make && ./driver ;;
 
             "gstreamer") # Start GStreamer streaming
             echo "GStreamer: starting streaming"
             gst-launch-1.0 v4l2src ! videoconvert ! video/x-raw ! jpegenc ! rtpjpegpay ! udpsink host=10.0.0.101 port=50200;;
-            
+
             "altec") # Start Mobility and Arm driver developed for Altec
             echo "Altec: starting Mobility and Arm driver"
             cd ~/salone-orientamento-demo/altec/build && cmake.. && make && ./altec ;;
-            
+
             "date")
             echo "Set current date [yyyy mm dd hh mm]"
             echo -n " > "
@@ -29,7 +43,7 @@ for var in "$@"
             echo "${DAY} ${months[${MONTH}]} "${YEAR} ${HOUR}:${MIN}:30"
             #sudo date --set="${DAY} ${months[${MONTH}]} "${YEAR} ${HOUR}:${MIN}:30"
             ;;
-            
+
             *) echo "INVALID ARGUMENT!" ;;
         esac
 
