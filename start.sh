@@ -11,7 +11,7 @@ while [ $LOOP -eq 1 ] ; do
     echo "[2] -> Altec"
     echo "[9] -> Change system date"
     echo "[q] -> QUIT"
-    echo -n " > "
+    echo -n "\n\033[92m→\033[1;39m  Insert Option \033[0;91m»\033[0m "
     read NUM
     echo "\n--------------------------------\n"
     case $NUM in
@@ -34,4 +34,4 @@ while [ $LOOP -eq 1 ] ; do
     	*) echo "INVALID NUMBER!" ;;
     esac
 done
-echo "\nBye Bye!\n"
+echo "\n\033[0;93mBye Bye!\033[0m\n"
